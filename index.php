@@ -1,27 +1,9 @@
 <?php
-if (isset($_GET['length']) && is_numeric($_GET['lenght'])) {
-
-  $lenght = $_GET['length'];
-
-  //Definisco i caratteri delle passowrd
-  $characetrs = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+';
-
-  $password = '';
-
-  //In questo for genero la password con i caratteri definiti sopra nella variabile $characters
-
-  for ($i = 0; $i < $lenght; $i++) {
-    $password .= $characters[rand(0, strlen($characters) - 1)];
-  }
-
-  echo "La tua password è: " . $password;
-}
-
+require_once __DIR__ . '/partials/function.php';
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <meta charset="UTF-8">
@@ -30,6 +12,14 @@ if (isset($_GET['length']) && is_numeric($_GET['lenght'])) {
 </head>
 
 <body>
+  <form action="index.php" method="GET">
+    Inserisci la lunghezza della password: <input type="number" name="length">
+    <button type="submit">Genera Password</button>
+    <button type="reset">Reset</button>
+    <div>
+      <?php echo "La tua password è: " . $password; ?>
+    </div>
+  </form>
 </body>
 
 </html>

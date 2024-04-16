@@ -1,17 +1,26 @@
 <?php
-if (isset($_GET['length']) && is_numeric($_GET['length'])) {
+function generatePassword()
+{
+  //Controllo se la variabile length è settata e se è un numero
+  if (isset($_GET['length']) && is_numeric($_GET['length'])) {
 
-  $length = $_GET['length'];
+    $length = $_GET['length'];
 
-  //Definisco i caratteri delle passowrd
-  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+';
+    //Definisco i caratteri delle passowrd
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+';
 
-  $password = '';
+    $password = '';
 
-  //In questo for genero la password con i caratteri definiti sopra nella variabile $characters
+    //In questo for genero la password con i caratteri definiti sopra nella variabile $characters
 
-  for ($i = 0; $i < $length; $i++) {
-    $password .= $characters[rand(0, strlen($characters) - 1)];
+    for ($i = 0; $i < $length; $i++) {
+      $password .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $password;
   }
-  return $password;
+}
+if (isset($_GET['length'])) {
+  session_start();
+  $_SESSION['password'] = generatePassword();
+  header('Location: redirect.php');
 }

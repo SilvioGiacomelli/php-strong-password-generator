@@ -15,7 +15,7 @@ require_once __DIR__ . '/partials/function.php';
 
 <body>
   <div>
-    <?php echo "La tua password è: " . $password; ?>
+    <?php echo "La tua password è: " . $_SESSION['password']; ?>
   </div>
 </body>
 

@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . '/partials/function.php';
+if (isset($_GET['length'])) {
+  session_start();
+  $_SESSION['password'] = generatePassword();
+  header('Location: redirect.php');
+}
 ?>
 
 <!DOCTYPE html>

@@ -19,8 +19,3 @@ function generatePassword()
     return $password;
   }
 }
-if (isset($_GET['length'])) {
-  session_start();
-  $_SESSION['password'] = generatePassword();
-  header('Location: redirect.php');
-}

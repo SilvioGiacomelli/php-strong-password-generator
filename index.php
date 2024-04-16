@@ -12,13 +12,11 @@ require_once __DIR__ . '/partials/function.php';
 </head>
 
 <body>
-  <form action="index.php" method="GET">
+  <form action="redirect.php" method="GET">
     Inserisci la lunghezza della password: <input type="number" name="length">
     <button type="submit">Genera Password</button>
     <button type="reset">Reset</button>
-    <div>
-      <?php echo "La tua password è: " . $password; ?>
-    </div>
+
   </form>
 </body>
 

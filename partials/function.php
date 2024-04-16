@@ -13,4 +13,5 @@ if (isset($_GET['length']) && is_numeric($_GET['length'])) {
   for ($i = 0; $i < $length; $i++) {
     $password .= $characters[rand(0, strlen($characters) - 1)];
   }
+  return $password;
 }

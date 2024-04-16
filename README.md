@@ -15,3 +15,9 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 Simboli: !?&%$<>^+-\*/()[]{}@#\_=
 buon lavoro!
+
+---
+
+Milestone 1:
+Creo un modulo nel file index.php che invii la lunghezza della password utilizzando GET.
+Scrivo una funzione che genera una password casuale contenente lettere, lettere maiuscole, numeri e simboli.
